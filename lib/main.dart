@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tp_flutter/providers/providers.dart';
+import 'package:tp_flutter/screens/home_screen.dart';
+import 'package:tp_flutter/theme/app_theme.dart';
 
 void main() {
 
@@ -12,24 +16,22 @@ class MareApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Mare',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+    // AJOUTEZ LE MULTIPROVIDER ICI
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => DashboardProvider()),
+      ],
+      child: MaterialApp(
+        title: 'Mare',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.lightTheme,
+        home: const HomeScreen(),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-child: MaterialApp(
-title: 'Mare',
-debugShowCheckedModeBanner: false,
-theme: AppTheme.lightTheme,
-home: showOnboarding ? const OnboardingScreen() : const HomeScreen(),
-),
+
 
 
 
