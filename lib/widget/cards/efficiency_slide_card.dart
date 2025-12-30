@@ -19,8 +19,7 @@ class _EfficiencySlideCardState extends State<EfficiencySlideCard> {
     final slides = context.watch<DashboardProvider>().efficiencySlides;
     
     return Container(
-      height: 200,
-      margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
+      height: 175,
       child: Column(
         children: [
           Expanded(
@@ -142,10 +141,19 @@ class _EfficiencySlideCardState extends State<EfficiencySlideCard> {
 
   Widget _buildPageIndicator(int index) {
     bool isActive = currentPage == index;
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    // ici on récupère le nombre de slide dans le providers pour rendre dynamique tout ça
+    final slidesCount = Provider.of<DashboardProvider>(context, listen: false).efficiencySlides.length;
+
+    // ici on récupère l'espace disponible en prenant la largeur de l'ecran - la marge
+    double dynamicWidth = (screenWidth - 80) / (slidesCount > 0 ? slidesCount : 1);
+
+    // cette partie on a du reduire la taille du pageIndicator et rendre ça dynamique pour chaque taille d'ecran
     return AnimatedContainer(
       duration: const Duration(milliseconds: 150),
       curve: Curves.easeInOut,
-      width: 76,
+      width: isActive ? dynamicWidth.clamp(50.0, 70.0) : (dynamicWidth * 0.5).clamp(8.0, 30.0),
       height: 2.5,
       margin: const EdgeInsets.symmetric(horizontal: 3),
       decoration: BoxDecoration(

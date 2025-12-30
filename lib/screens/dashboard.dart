@@ -35,7 +35,7 @@ class DashboardScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(10),
             child: Column(
               children: [
                 _buildHeaderSection(context),
@@ -43,7 +43,7 @@ class DashboardScreen extends StatelessWidget {
 
                 Container(
                   width: double.infinity,
-
+                  padding: const EdgeInsets.all(11),
                   constraints: BoxConstraints(
                     minHeight: MediaQuery.of(context).size.height * 0.8,
                   ),
@@ -53,7 +53,7 @@ class DashboardScreen extends StatelessWidget {
                     border: Border.all(color: AppColors.border),
 
                   ),
-                  padding: const EdgeInsets.all(24),
+
                   child: Column(
                     children: [
 

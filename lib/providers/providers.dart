@@ -1,8 +1,6 @@
 import 'package:flutter/foundation.dart';
 import '../models/dashboardModels.dart';
-/// Dashboard state provider
-/// Principle: Single Responsibility - Only manages dashboard state
-/// Principle: Dependency Inversion - Depends on IDashboardService abstraction
+
 class DashboardProvider extends ChangeNotifier {
   // State
   int _currentNavIndex = 0;
