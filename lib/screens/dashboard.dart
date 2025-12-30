@@ -4,7 +4,7 @@ import '../models/dashboardModels.dart';
 import '../utils/color.dart';
 import '../utils/text_style.dart';
 import '../widget/cards/activity_seeds.dart';
-
+import '../widget/cards/customer_sentiment_card.dart';
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -74,8 +74,10 @@ class DashboardScreen extends StatelessWidget {
 
 
                       const SizedBox(height: 18),
+
                       // la partie customer sentiment
-                      _customerSentiment(),
+                      //ici, on va appeler directement le widget customer sentiment card via le fichier customer_sentiment_card.dart
+                      const CustomerSentimentCard(),
 
 
                       const SizedBox(height: 18,),
@@ -192,11 +194,12 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-  Widget _customerSentiment() {
-    return Center(
-      child: Text("La partie customer sentiment card"),
-    );
-  }
+/*le widget pour la partie customer sentiment
+  à déjà été créé dans le fichier customer_sentiment_card.dart
+  et on l'a juste appelé plus haut dans le widgetbuild de la manière suivante:
+  const CustomerSentimentCard()
+ */
+  
 
 
   Widget _activitySeed(String emoji, String name, String comment, int stars) {
