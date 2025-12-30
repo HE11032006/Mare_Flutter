@@ -35,8 +35,8 @@ abstract class AppColors {
   static const Color chartGray = Color(0xFFE5E7EB);
 
   // Efficiency card gradient
-  static const Color efficiencyStart = Color(0xFF1B4332);
-  static const Color efficiencyEnd = Color(0xFF2D6A4F);
+  static const Color efficiencyStart = Color(0xFFE86A2C);
+  static const Color efficiencyEnd = Color(0xFFF08A4B);
 
   // Border colors
   static const Color border = Color(0xFFE5E7EB);

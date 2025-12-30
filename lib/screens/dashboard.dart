@@ -5,6 +5,7 @@ import '../utils/color.dart';
 import '../utils/text_style.dart';
 import '../widget/cards/activity_seeds.dart';
 import '../widget/cards/customer_sentiment_card.dart';
+import '../widget/cards/efficiency_slide_card.dart';
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -171,9 +172,7 @@ class DashboardScreen extends StatelessWidget {
   }
 
   Widget _efficentlycard() {
-    return Center(
-      child: Text("La partie efficiency card"),
-    );
+    return const EfficiencySlideCard();
   }
 
   Widget _workflowcard() {
