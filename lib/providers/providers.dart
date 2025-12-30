@@ -44,4 +44,38 @@ class DashboardProvider extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  // Données slide EFFICIENCY
+  final List<Map<String, dynamic>> _efficiencySlides = [
+    {
+      'title': 'Active Users',
+      'value': 320,
+      'label': 'Users',
+      'growth': 18.6,
+      'period': 'vs last month',
+    },
+    {
+      'title': 'Business Autonomous Reports',
+      'value': 92,
+      'label': 'Efficiency',
+      'growth': 24.2,
+      'period': 'vs last week',
+    },
+    {
+      'title': 'Revenue Growth',
+      'value': 156,
+      'label': 'Revenue',
+      'growth': 45.8,
+      'period': 'vs last month',
+    },
+    {
+      'title': 'Customer Satisfaction',
+      'value': 4.8,
+      'label': 'Rating',
+      'growth': 12.3,
+      'period': 'vs last quarter',
+    },
+  ];
+
+  List<Map<String, dynamic>> get efficiencySlides => _efficiencySlides;
 }
