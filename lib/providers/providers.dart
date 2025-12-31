@@ -76,4 +76,21 @@ class DashboardProvider extends ChangeNotifier {
   ];
 
   List<Map<String, dynamic>> get efficiencySlides => _efficiencySlides;
+
+  // Données workflow performance
+  final Map<String, dynamic> _workflowData = {
+    'date': '05 December 25',
+    'successRate': 98.0,
+    'successGrowth': 16.2,
+    'automationChange': -4.7,
+    'revenueChange': 20.9,
+    'chartData': [
+      {'day': 'Wed', 'value': 45},
+      {'day': 'Thu', 'value': 50},
+      {'day': 'Fri', 'value': 98},
+      {'day': 'Sat', 'value': 95},
+    ],
+  };
+
+  Map<String, dynamic> get workflowData => _workflowData;
 }
