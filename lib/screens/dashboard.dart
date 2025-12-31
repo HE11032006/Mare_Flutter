@@ -6,6 +6,7 @@ import '../utils/text_style.dart';
 import '../widget/cards/activity_seeds.dart';
 import '../widget/cards/customer_sentiment_card.dart';
 import '../widget/cards/efficiency_slide_card.dart';
+import '../widget/cards/conversion_funnel_card.dart'; 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -188,9 +189,7 @@ class DashboardScreen extends StatelessWidget {
   }
 
   Widget _conventionfunnelcard() {
-    return Center(
-      child: Text("La partie convention funnel"),
-    );
+    return const ConversionFunnelCard();
   }
 
 /*le widget pour la partie customer sentiment
