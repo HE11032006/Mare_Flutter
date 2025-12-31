@@ -22,6 +22,19 @@ enum ActivityType {
   workflow,
   alert,
 }
+class ConversionMetrics {
+  final int visitors;
+  final int addedToCart;
+  final int checkoutStarted;
+  final int completedOrders;
+  double get conversionRate => visitors == 0 ? 0.0 : (completedOrders / visitors) * 100;
+  const ConversionMetrics({
+    required this.visitors,
+    required this.addedToCart,
+    required this.checkoutStarted,
+    required this.completedOrders,
+  });
+}
 class CustomerSentiment {
   final int posCount; 
   final int neuCount; 
