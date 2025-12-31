@@ -19,29 +19,29 @@ class ConversionFunnelCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.surface,
         borderRadius: BorderRadius.circular(24),
-        border: Border.fromBorderSide(BorderSide(color: AppColors.border)),
-      ),
+        border: Border.all(color: AppColors.borderLight)
+      ),  
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _buildHeader(accentColor),
-          const SizedBox(height: 25),
+          const SizedBox(height: 20),
 
           // Sélecteur d'onglets (Tab Selector)
           _buildTabSelector(provider, currentIndex),
           
-          const SizedBox(height: 25),
+          const SizedBox(height: 20),
 
           // Grille des statistiques (Metrics)
           GridView.count(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             crossAxisCount: 2,
-            crossAxisSpacing: 12,
-            mainAxisSpacing: 12,
-            childAspectRatio: 1.4,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            childAspectRatio: 1.6,
             children: [
               _buildMetricItem("Visitors", data.visitors.toString(), Icons.people_outline),
               _buildMetricItem("Added to Cart", data.addedToCart.toString(), Icons.shopping_cart_outlined),
@@ -64,16 +64,16 @@ class ConversionFunnelCard extends StatelessWidget {
   Widget _buildHeader(Color color) {
     return Row(
       children: [
-        Icon(Icons.filter_alt_outlined, color: color),
+        Icon(Icons.filter_alt_outlined, color: color,size: 20),
         const SizedBox(width: 8),
         const Text(
           "Conversion Funnel",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16,color:AppColors.textPrimary),
         ),
       ],
     );
   }
-
+// Sélecteur d'onglets pour les différentes vues du funnel
   Widget _buildTabSelector(DashboardProvider provider, int currentIndex) {
     final List<String> tabs = ["Website", "Marketplace", "Retails"];
     
@@ -115,7 +115,7 @@ class ConversionFunnelCard extends StatelessWidget {
       ),
     );
   }
-
+// widget pour chaque bloc de métrique
   Widget _buildMetricItem(String label, String value, IconData icon) {
     return Container(
       padding: const EdgeInsets.all(16),
