@@ -84,12 +84,6 @@ class DashboardProvider extends ChangeNotifier {
     'successGrowth': 16.2,
     'automationChange': -4.7,
     'revenueChange': 20.9,
-    'chartData': [
-      {'day': 'Wed', 'value': 45},
-      {'day': 'Thu', 'value': 50},
-      {'day': 'Fri', 'value': 98},
-      {'day': 'Sat', 'value': 95},
-    ],
   };
 
   Map<String, dynamic> get workflowData => _workflowData;
