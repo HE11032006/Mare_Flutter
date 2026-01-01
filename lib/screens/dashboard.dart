@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import '../models/dashboardModels.dart';
 import '../utils/color.dart';
 import '../utils/text_style.dart';
 import '../widget/cards/activity_seeds.dart';
 import '../widget/cards/customer_sentiment_card.dart';
+import '../widget/cards/business_traffic.dart';
 import '../widget/cards/efficiency_slide_card.dart';
 import '../widget/cards/workflow_performance_card.dart';
 import '../widget/cards/conversion_funnel_card.dart'; 
@@ -182,9 +182,7 @@ class DashboardScreen extends StatelessWidget {
   }
 
   Widget _businessTrafficCard() {
-    return Center(
-      child: Text("La partie business traffic card"),
-    );
+    return const BusinessTrafficCard();
   }
 
   Widget _conventionfunnelcard() {
