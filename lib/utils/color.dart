@@ -30,8 +30,8 @@ abstract class AppColors {
   // Chart colors
   static const Color chartGreen = Color(0xFF22C55E);
   static const Color chartOrange = Color(0xFFE85D04);
-  static const Color chartYellow = Color(0xFFFBBF24);
-  static const Color chartBlue = Color(0xFF3B82F6);
+  static const Color chartBackground = Color(0xFFFFEEE6);
+  static const Color chartRed = Color(0xFFFF0000);
   static const Color chartGray = Color(0xFFE5E7EB);
 
   // Efficiency card gradient
