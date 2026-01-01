@@ -8,6 +8,30 @@ class DashboardProvider extends ChangeNotifier {
 
   int _currentFunnelTabIndex = 0;
   int get currentFunnelTabIndex => _currentFunnelTabIndex;
+  //on utilise une Map pour faire correspondre l'index(0,1,2)aux données
+  final Map<int, ConversionMetrics> _funnelData = {
+    0:ConversionMetrics(
+      visitors:3218,
+      addedToCart: 417,
+      checkoutStarted: 184,
+      completedOrders: 118,
+     ),
+    1:ConversionMetrics(
+      visitors:1500,
+      addedToCart: 200,
+      checkoutStarted: 90,
+      completedOrders: 50,
+     ),
+    2:ConversionMetrics(
+      visitors:800,
+      addedToCart: 100,
+      checkoutStarted: 50,
+      completedOrders: 30,
+     ),
+  
+  };
+  //Getter pour obtenir les données en fonction de l'onglet actif
+  ConversionMetrics get currentFunnelMetrics => _funnelData[_currentFunnelTabIndex]!;
 
   CustomerSentiment _customerSentiment = const CustomerSentiment(
     posCount: 34,

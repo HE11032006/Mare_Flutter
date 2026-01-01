@@ -41,6 +41,11 @@ abstract class AppColors {
   // Border colors
   static const Color border = Color(0xFFE5E7EB);
   static const Color borderLight = Color(0xFFF3F4F6);
+  
+  // Conversion Funnel specific
+  static const Color funnelAccent = Color(0xFFD4813E);
+  static const Color tabBackground = Color(0xFFF5F5F7);
+
 
   // Sentiment colors
   static const Color sentimentPositive = Color(0xFF22C55E);
