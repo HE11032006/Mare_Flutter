@@ -30,17 +30,22 @@ abstract class AppColors {
   // Chart colors
   static const Color chartGreen = Color(0xFF22C55E);
   static const Color chartOrange = Color(0xFFE85D04);
-  static const Color chartYellow = Color(0xFFFBBF24);
-  static const Color chartBlue = Color(0xFF3B82F6);
+  static const Color chartBackground = Color(0xFFFFEEE6);
+  static const Color chartRed = Color(0xFFFF0000);
   static const Color chartGray = Color(0xFFE5E7EB);
 
   // Efficiency card gradient
-  static const Color efficiencyStart = Color(0xFF1B4332);
-  static const Color efficiencyEnd = Color(0xFF2D6A4F);
+  static const Color efficiencyStart = Color(0xFFE86A2C);
+  static const Color efficiencyEnd = Color(0xFFF08A4B);
 
   // Border colors
   static const Color border = Color(0xFFE5E7EB);
   static const Color borderLight = Color(0xFFF3F4F6);
+  
+  // Conversion Funnel specific
+  static const Color funnelAccent = Color(0xFFD4813E);
+  static const Color tabBackground = Color(0xFFF5F5F7);
+
 
   // Sentiment colors
   static const Color sentimentPositive = Color(0xFF22C55E);

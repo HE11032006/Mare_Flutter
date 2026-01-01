@@ -5,6 +5,9 @@ import '../utils/text_style.dart';
 import '../widget/cards/activity_seeds.dart';
 import '../widget/cards/customer_sentiment_card.dart';
 import '../widget/cards/business_traffic.dart';
+import '../widget/cards/efficiency_slide_card.dart';
+import '../widget/cards/workflow_performance_card.dart';
+import '../widget/cards/conversion_funnel_card.dart'; 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -34,7 +37,7 @@ class DashboardScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(10),
             child: Column(
               children: [
                 _buildHeaderSection(context),
@@ -42,7 +45,7 @@ class DashboardScreen extends StatelessWidget {
 
                 Container(
                   width: double.infinity,
-
+                  padding: const EdgeInsets.all(11),
                   constraints: BoxConstraints(
                     minHeight: MediaQuery.of(context).size.height * 0.8,
                   ),
@@ -52,7 +55,7 @@ class DashboardScreen extends StatelessWidget {
                     border: Border.all(color: AppColors.border),
 
                   ),
-                  padding: const EdgeInsets.all(24),
+
                   child: Column(
                     children: [
 
@@ -171,15 +174,11 @@ class DashboardScreen extends StatelessWidget {
   }
 
   Widget _efficentlycard() {
-    return Center(
-      child: Text("La partie efficiency card"),
-    );
+    return const EfficiencySlideCard();
   }
 
   Widget _workflowcard() {
-    return Center(
-      child: Text("La partie workflowcard"),
-    );
+    return const WorkflowPerformanceCard();
   }
 
   Widget _businessTrafficCard() {
@@ -187,9 +186,7 @@ class DashboardScreen extends StatelessWidget {
   }
 
   Widget _conventionfunnelcard() {
-    return Center(
-      child: Text("La partie convention funnel"),
-    );
+    return const ConversionFunnelCard();
   }
 
 /*le widget pour la partie customer sentiment

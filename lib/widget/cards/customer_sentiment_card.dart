@@ -21,7 +21,8 @@ class CustomerSentimentCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Colors.black.withOpacity(0.05)),
+        //border: Border.all(color: Colors.black.withOpacity(0.05)),
+        border: Border.fromBorderSide(BorderSide(color: AppColors.border)),
       ),
       child: Column(
         children: [
@@ -94,7 +95,7 @@ class CustomerSentimentCard extends StatelessWidget {
     // L'encadré gris clair autour des stats
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(16),
-      border: Border.all(color: Colors.black.withOpacity(0.05)),
+      border: Border.fromBorderSide(BorderSide(color: AppColors.border)),
     ),
     child: IntrinsicHeight( // Permet aux séparateurs de prendre toute la hauteur
       child: Row(
@@ -135,6 +136,7 @@ class CustomerSentimentCard extends StatelessWidget {
               decoration: BoxDecoration(
                 color: color,
                 borderRadius: BorderRadius.circular(2), // Carré légèrement arrondi
+
               ),
             ),
             const SizedBox(width: 8),
