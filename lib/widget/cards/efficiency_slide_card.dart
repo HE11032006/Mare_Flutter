@@ -151,9 +151,10 @@ class _EfficiencySlideCardState extends State<EfficiencySlideCard> {
 
     // cette partie on a du reduire la taille du pageIndicator et rendre ça dynamique pour chaque taille d'ecran
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 150),
-      curve: Curves.easeInOut,
-      width: isActive ? dynamicWidth.clamp(50.0, 70.0) : (dynamicWidth * 0.5).clamp(8.0, 30.0),
+      duration: const Duration(milliseconds: 120),
+      curve: Curves.easeIn,
+      // width: isActive ? dynamicWidth.clamp(50.0, 70.0) : (dynamicWidth * 0.5).clamp(8.0, 30.0),
+      width: dynamicWidth.clamp(50.0, 90.0),
       height: 2.5,
       margin: const EdgeInsets.symmetric(horizontal: 3),
       decoration: BoxDecoration(
