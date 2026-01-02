@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../providers/providers.dart';
 import '../../utils/color.dart';
+import '../../utils/text_style.dart';
 
 class ConversionFunnelCard extends StatelessWidget {
   const ConversionFunnelCard({super.key});
@@ -12,6 +13,8 @@ class ConversionFunnelCard extends StatelessWidget {
     final provider = context.watch<DashboardProvider>();
     final data = provider.currentFunnelMetrics;
     final currentIndex = provider.currentFunnelTabIndex;
+
+    final w = MediaQuery.of(context).size.width;
 
     // On utilise la couleur orange pour correspondre à l'icône de l'entonnoir
     const accentColor = Color(0xFFD4813E);
@@ -26,7 +29,7 @@ class ConversionFunnelCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildHeader(accentColor),
+          _buildHeader(context),
           const SizedBox(height: 20),
 
           // Sélecteur d'onglets (Tab Selector)
@@ -61,19 +64,67 @@ class ConversionFunnelCard extends StatelessWidget {
     );
   }
 
-  Widget _buildHeader(Color color) {
+  Widget _buildHeader(BuildContext context) {
+    final w = MediaQuery.of(context).size.width;
+
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Icon(Icons.filter_alt_outlined, color: color,size: 20),
-        const SizedBox(width: 8),
-        const Text(
-          "Conversion Funnel",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16,color:AppColors.textPrimary),
+        Container(
+          padding: EdgeInsets.all(w * 0.015),
+          decoration: BoxDecoration(
+            color: AppColors.chartBackground,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Icon(
+            Icons.filter_alt_outlined,
+            color: AppColors.chartOrange,
+            size: w * 0.07,
+          ),
+        ),
+        SizedBox(width: w * 0.03),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Conversion Funnel',
+                style: AppTextStyles.cardTitle,
+              ),
+              SizedBox(height: w * 0.006),
+              Text(
+                'Track your business flow',
+                style: AppTextStyles.cardSubtitle,
+              ),
+            ],
+          ),
         ),
       ],
     );
   }
-// Sélecteur d'onglets pour les différentes vues du funnel
+
+  //  cette fonction & été exporté de dashboard.dart
+  void _showToast(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).clearSnackBars(); // Enlève le message précédent s'il y en a un
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(
+        message,
+        textAlign: TextAlign.center,
+        style: const TextStyle(color: Colors.white, fontSize: 14),
+      ),
+        backgroundColor: Colors.black87,
+        behavior: SnackBarBehavior.floating, // Rend la snackbar flottante (arrondie)
+        width: 200, // Largeur réduite pour l'effet "petit toast"
+        duration: const Duration(seconds: 2),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+      ),
+    );
+  }
+
+  // Sélecteur d'onglets pour les différentes vues du funnel
   Widget _buildTabSelector(DashboardProvider provider, int currentIndex) {
     final List<String> tabs = ["Website", "Marketplace", "Retails"];
     
@@ -116,7 +167,7 @@ class ConversionFunnelCard extends StatelessWidget {
     );
   }
 
-// widget pour chaque bloc de métrique
+  // widget pour chaque bloc de métrique
   Widget _buildMetricItem(String label, String value, IconData icon) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12), // Réduit de 16 à 12 pour gagner de l'espace
@@ -156,6 +207,7 @@ class ConversionFunnelCard extends StatelessWidget {
     );
   }
 
+  // le footer
   Widget _buildFooter(BuildContext context, String label) {
     return InkWell(
       onTap: () {
@@ -181,28 +233,4 @@ class ConversionFunnelCard extends StatelessWidget {
     );
   }
 
-  //  cette fonction & été exporté de dashboard.dart
-  void _showToast(BuildContext context, String message) {
-    ScaffoldMessenger.of(context).clearSnackBars(); // Enlève le message précédent s'il y en a un
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(
-        message,
-        textAlign: TextAlign.center,
-        style: const TextStyle(color: Colors.white, fontSize: 14),
-      ),
-        backgroundColor: Colors.black87,
-        behavior: SnackBarBehavior.floating, // Rend la snackbar flottante (arrondie)
-        width: 200, // Largeur réduite pour l'effet "petit toast"
-        duration: const Duration(seconds: 2),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        animation: CurvedAnimation(
-          parent: AnimationController(vsync: ScaffoldMessenger.of(context)), // Géré automatiquement par Flutter
-          curve: Curves.easeOutBack, // Transition rapide et un peu élastique
-        ),
-      ),
-    );
-  }
 }

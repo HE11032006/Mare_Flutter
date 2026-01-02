@@ -52,17 +52,17 @@ abstract class AppTextStyles {
 
   // Card titles
   static TextStyle cardTitle = _baseFont.copyWith(
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
     height: 1.4,
   );
 
   static TextStyle cardSubtitle = _baseFont.copyWith(
-    fontSize: 13,
+    fontSize: 12,
     fontWeight: FontWeight.w400,
     color: AppColors.textSecondary,
-    height: 1.4,
+    height: 1,
   );
 
   // Body text

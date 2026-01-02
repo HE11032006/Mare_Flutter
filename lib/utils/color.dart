@@ -20,7 +20,7 @@ abstract class AppColors {
 
   // Status colors
   static const Color success = Color(0xFF22C55E);
-  static const Color successLight = Color(0xFFDCFCE7);
+  static const Color blueLight = Color(0xFFDCFCE7);
   static const Color warning = Color(0xFFFBBF24);
   static const Color warningLight = Color(0xFFFEF3C7);
   static const Color error = Color(0xFFEF4444);
