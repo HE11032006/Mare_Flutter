@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../providers/providers.dart';
+import '../../utils/color.dart';
 import 'customer_sentiment_gauge.dart';
 
 class CustomerSentimentCard extends StatelessWidget {
