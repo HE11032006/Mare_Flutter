@@ -24,6 +24,7 @@ enum ActivityType {
   workflow,
   alert, update,
 }
+
 class ConversionMetrics {
   final int visitors;
   final int addedToCart;
@@ -37,12 +38,13 @@ class ConversionMetrics {
     required this.completedOrders,
   });
 }
-class CustomerSentiment {
-  final int posCount; 
-  final int neuCount; 
-  final int negCount; 
 
-  
+class CustomerSentiment {
+  final int posCount;
+  final int neuCount;
+  final int negCount;
+
+
   int get totalReviews => posCount + neuCount + negCount;
 
   // Calcul automatique des pourcentages (0.0 à 1.0)

@@ -8,6 +8,7 @@ class DashboardProvider extends ChangeNotifier {
 
   int _currentFunnelTabIndex = 0;
   int get currentFunnelTabIndex => _currentFunnelTabIndex;
+
   //on utilise une Map pour faire correspondre l'index(0,1,2)aux données
   final Map<int, ConversionMetrics> _funnelData = {
     0:ConversionMetrics(
