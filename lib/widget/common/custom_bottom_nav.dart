@@ -54,7 +54,7 @@ class CustomBottomNav extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         curve: Curves.easeInOut,
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         child: Icon(
           isSelected ? filledIcon : outlinedIcon,
           color: isSelected ? AppColors.primary : AppColors.navInactive,
