@@ -129,13 +129,15 @@ class ActivitiesCard extends StatelessWidget {
           child: Icon(Icons.smart_button, color: AppColors.chartOrange, size: 22),
         ),
         const SizedBox(width: 12),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Activities Feeds', style: AppTextStyles.cardTitle),
-            const SizedBox(height: 2),
-            Text('Stay updated with your business', style: AppTextStyles.cardSubtitle),
-          ],
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Activities Feeds', style: AppTextStyles.cardTitle),
+              const SizedBox(height: 2),
+              Text('Stay updated with your business', style: AppTextStyles.cardSubtitle),
+            ],
+          ),
         ),
       ],
     );

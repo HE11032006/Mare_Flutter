@@ -40,7 +40,7 @@ class _EfficiencySlideCardState extends State<EfficiencySlideCard> {
               },
             ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
@@ -48,7 +48,7 @@ class _EfficiencySlideCardState extends State<EfficiencySlideCard> {
               (index) => _buildPageIndicator(index),
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 4),
         ],
       ),
     );
@@ -84,7 +84,7 @@ class _EfficiencySlideCardState extends State<EfficiencySlideCard> {
           ),
         ],
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,

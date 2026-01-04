@@ -142,19 +142,25 @@ class CustomerSentimentCard extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 8),
-            Text(
-              label,
-              style: const TextStyle(fontSize: 12, color: Colors.grey),
+            Flexible(
+              child: Text(
+                label,
+                style: const TextStyle(fontSize: 11, color: Colors.grey),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+              ),
             ),
           ],
         ),
         const SizedBox(height: 8),
-        Text(
-          value,
-          style: const TextStyle(
-            fontSize: 18, 
-            fontWeight: FontWeight.bold,
-            color: Colors.black87,
+        Expanded(
+          child: Text(
+            value,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+            ),
           ),
         ),
       ],
